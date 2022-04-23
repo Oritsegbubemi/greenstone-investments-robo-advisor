@@ -1,15 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="wide wow-animation" lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <title>GreenStone Investments</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,400italic,700,900%7CPlayfair+Display:700italic,900">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <div class="preloader">
+    <div><a class="brand brand-md" href="index.html"><img src="images/logo-default-139x22.svg" alt="" width="139"
+          height="22" /></a>
+      <div class="page-loader-body">
+        <div id="spinningSquaresG">
+          <div class="spinningSquaresG" id="spinningSquaresG_1"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_2"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_3"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_4"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_5"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_6"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_7"></div>
+          <div class="spinningSquaresG" id="spinningSquaresG_8"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page">
 
+    <!-- Header Section -->
+    <header class="page-head">
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-default" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up="true" data-xl-stick-up="true"
+          data-xxl-stick-up="true" data-lg-stick-up-offset="60px" data-xl-stick-up-offset="60px"
+          data-xxl-stick-up-offset="60px">
+          <div class="rd-navbar-inner">
+            <div class="rd-navbar-panel">
+              <button class="rd-navbar-toggle" data-custom-toggle=".rd-navbar-nav-wrap"
+                data-custom-toggle-disable-on-blur="true"><span></span></button><a class="" href="index.html"><img
+                  src="images/logo.webp" alt="" width="139" height="22" /></a>
+            </div>
+            <div class="rd-navbar-group rd-navbar-search-wrap">
+              <div class="rd-navbar-nav-wrap">
+                <div class="rd-navbar-nav-inner">
+                  <div class="rd-navbar-search">
+                    <form class="rd-search" action="#" method="GET" data-search-live="rd-search-results-live">
+                      <div class="form-wrap">
+                        <label class="form-label" for="rd-search-form-input">Search...</label>
+                        <input class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off">
+                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                      </div>
+                      <button class="rd-search-submit" type="submit"></button>
+                    </form>
+                    <button class="rd-navbar-search-toggle"
+                      data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-search-wrap"></button>
+                  </div>
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact.html">Contact us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Form Section -->
+    <section class="section section-60 section-md-50 bg-accent novi-background">
+      <div class="container text-center text-lg-start">
+        <form>
+          <!-- Question1: Age Range -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">1) What is your age range?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="age1" value="option1">
+                  <label class="form-check-label" for="age1">
+                    20 - 29
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="age2" value="option2">
+                  <label class="form-check-label" for="age2">
+                    30 - 45
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="age" id="age3" value="option3">
+                  <label class="form-check-label" for="age3">
+                    46 - 60
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question2: Investment Goal -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">2) What is your investment goal?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="investment" id="investment1" value="option1">
+                  <label class="form-check-label" for="investment1">
+                    Saving for retirement
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="investment" id="investment2" value="option2">
+                  <label class="form-check-label" for="investment2">
+                    Saving for special purposes (housing, travel, education, etc)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="investment" id="investment3" value="option3">
+                  <label class="form-check-label" for="investment3">
+                    Build long-term wealth
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question3: Risk -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">3) What is the first thought that comes to mind when you hear
+                "risk" related to your finances?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="risk" id="risk1" value="option1">
+                  <label class="form-check-label" for="risk1">
+                    I worry that I could be left with nothing
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="risk" id="risk2" value="option2">
+                  <label class="form-check-label" for="risk2">
+                    I understand that investment comes with risks
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="risk" id="risk3" value="option3">
+                  <label class="form-check-label" for="risk3">
+                    I see opportunity for great returns
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question4: Declinement -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">4) What would you do if you were to experience a 25% decline
+                or more in the value of your investments?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="decline" id="decline1" value="option1">
+                  <label class="form-check-label" for="decline1">
+                    Sell everything
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="decline" id="decline2" value="option2">
+                  <label class="form-check-label" for="decline2">
+                    Do nothing
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="decline" id="decline3" value="option3">
+                  <label class="form-check-label" for="decline3">
+                    Buy more
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question5: how much -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">5) How much money are you willing to invest?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="much" id="much1" value="option1">
+                  <label class="form-check-label" for="much1">
+                    1,000 - 4,999
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="much" id="much2" value="option2">
+                  <label class="form-check-label" for="much2">
+                    5,000 and above
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question6: Industry -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">6) What industry are you interest in? </legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" id="industry1" value="option1">
+                  <label class="form-check-label" for="industry1">
+                    Technology
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" id="industry2" value="option2">
+                  <label class="form-check-label" for="industry2">
+                    Financial
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" id="industry3" value="option3">
+                  <label class="form-check-label" for="industry3">
+                    None in particular
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Question7: Employment -->
+          <fieldset class="form-group">
+            <div class="pt-5">
+              <legend class="col-form-label col-md-6 pt-0">7) Are you self-employed?</legend>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="employ" id="employ1" value="option1">
+                  <label class="form-check-label" for="employ1">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="employ" id="employ2" value="option2">
+                  <label class="form-check-label" for="employ2">
+                    No
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="employ" id="employ3" value="option3">
+                  <label class="form-check-label" for="employ3">
+                    Others (student, etc)
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Button -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Section-->
+    <section class="section section-40 section-md-top-75 section-md-bottom-60 bg-cod-gray novi-background">
+      <div class="container text-center text-md-start">
+        <div class="row row-30 align-items-md-center justify-content-lg-center justify-content-xl-start">
+          <div class="col-lg-11 col-xl-3"><a class="brand" href="index.html"><img src="images/logo-inverse-139x22.svg"
+                alt="" width="139" height="22" /></a></div>
+          <div class="col-md-7 col-lg-6 col-xl-5">
+            <div class="wrap-justify">
+              <address class="contact-info text-start">
+                <div
+                  class="unit unit-horizontal unit-spacing-xs align-items-center justify-content-center unit-sm-left">
+                  <div class="unit-left"><span
+                      class="novi-icon icon icon-md-custom icon-gunsmoke material-icons-place"></span></div>
+                  <div class="unit-body fw-light"><a class="link-light-03 d-inline" href="#">92 Av. de l'Universite,
+                      <br>Esch-sur-Alzette, Luxembourg</a></div>
+                </div>
+              </address>
+              <address class="contact-info text-start">
+                <div
+                  class="unit unit-horizontal unit-spacing-xs align-items-center justify-content-center unit-sm-left">
+                  <div class="unit-left"><span
+                      class="novi-icon icon icon-md-custom icon-gunsmoke material-icons-phone"></span></div>
+                  <div class="unit-body fw-light">
+                    <div class="link-wrap"><a class="link-light-03" href="tel:#">+352 661 308 198</a></div>
+                    <div class="link-wrap"><a class="link-light-03" href="mailto:#">info@greenstone.org</a></div>
+                  </div>
+                </div>
+              </address>
+            </div>
+          </div>
+          <div class="col-md-5 col-xl-4 text-lg-center">
+            <ul class="list-inline list-inline-xs">
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-facebook" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-twitter" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-google-plus" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-linkedin" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-skype" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-vine" href="#"></a></li>
+              <li><a class="novi-icon icon icon-sm-custom link-tundora fa-youtube" href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-foot page-foot-default section-35 bg-black novi-background text-center">
+      <div class="container">
+        <p class="rights small"><span>GreenStone Investments</span><span>&nbsp;&#169;&nbsp;</span><span
+            class="copyright-year"></span><span>All Rights Reserved.</span><br class="d-md-none"></p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="snackbars" id="form-output-global"></div>
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
