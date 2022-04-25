@@ -104,14 +104,7 @@
                     30 - 45
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="age" id="age3" value="option3">
-                  <label class="form-check-label" for="age3">
-                    46 - 60
-                  </label>
-                </div>
               </div>
-            </div>
           </fieldset>
 
           <!-- Question2: Investment Goal -->
@@ -354,7 +347,7 @@
       var industry2 = document.getElementById('industry2');
       var industry3 = document.getElementById('industry3');
 
-      if (risk1.checked == true && industry1.checked == true) {
+      if (industry1.checked == true && risk1.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -368,7 +361,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk1.checked == true && industry2.checked == true) {
+      else if (industry1.checked == true && risk2.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -382,7 +375,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk1.checked == true && industry3.checked == true) {
+      else if (industry1.checked == true && risk3.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -396,7 +389,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk2.checked == true && industry1.checked == true) {
+      else if (industry2.checked == true && risk1.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -410,7 +403,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk2.checked == true && industry2.checked == true) {
+      else if (industry2.checked == true && risk2.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -424,7 +417,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk2.checked == true && industry3.checked == true) {
+      else if (industry2.checked == true && risk3.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -438,7 +431,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk3.checked == true && industry1.checked == true) {
+      else if (industry3.checked == true && risk1.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -452,7 +445,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk3.checked == true && industry2.checked == true) {
+      else if (industry3.checked == true && risk2.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
@@ -466,7 +459,7 @@
           chart.draw(data, options);
         }
       }
-      else if (risk3.checked == true && industry3.checked == true) {
+      else if (industry3.checked == true && risk3.checked == true) {
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
