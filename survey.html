@@ -82,16 +82,18 @@
     </header>
 
     <!-- Form Section -->
-    <section class="section section-60 section-md-50 bg-accent novi-background">
+    <!-- <section class="section section-60 section-md-50 bg-accent novi-background"> -->
+    <section class="section section-60 section-md-50">
       <div class="container text-center text-lg-start">
-        <form>
+        <form method="get">
+
           <!-- Question1: Age Range -->
           <fieldset class="form-group">
             <div class="pt-5">
               <legend class="col-form-label col-md-6 pt-0">1) What is your age range?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="age" id="age1" value="option1">
+                  <input class="form-check-input" type="radio" name="age" id="age1" value="option1" required>
                   <label class="form-check-label" for="age1">
                     20 - 29
                   </label>
@@ -118,7 +120,8 @@
               <legend class="col-form-label col-md-6 pt-0">2) What is your investment goal?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="investment" id="investment1" value="option1">
+                  <input class="form-check-input" type="radio" name="investment" id="investment1" value="option1"
+                    required>
                   <label class="form-check-label" for="investment1">
                     Saving for retirement
                   </label>
@@ -146,7 +149,7 @@
                 "risk" related to your finances?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="risk" id="risk1" value="option1">
+                  <input class="form-check-input" type="radio" name="risk" id="risk1" value="option1" required>
                   <label class="form-check-label" for="risk1">
                     I worry that I could be left with nothing
                   </label>
@@ -174,7 +177,7 @@
                 or more in the value of your investments?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="decline" id="decline1" value="option1">
+                  <input class="form-check-input" type="radio" name="decline" id="decline1" value="option1" required>
                   <label class="form-check-label" for="decline1">
                     Sell everything
                   </label>
@@ -201,15 +204,15 @@
               <legend class="col-form-label col-md-6 pt-0">5) How much money are you willing to invest?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="much" id="much1" value="option1">
+                  <input class="form-check-input" type="radio" name="much" id="much1" value="option1" required>
                   <label class="form-check-label" for="much1">
-                    1,000 - 4,999
+                    $1,000 - $4,999
                   </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="much" id="much2" value="option2">
                   <label class="form-check-label" for="much2">
-                    5,000 and above
+                    $5,000 and above
                   </label>
                 </div>
               </div>
@@ -222,7 +225,7 @@
               <legend class="col-form-label col-md-6 pt-0">6) What industry are you interest in? </legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="industry" id="industry1" value="option1">
+                  <input class="form-check-input" type="radio" name="industry" id="industry1" value="option1" required>
                   <label class="form-check-label" for="industry1">
                     Technology
                   </label>
@@ -249,7 +252,7 @@
               <legend class="col-form-label col-md-6 pt-0">7) Are you self-employed?</legend>
               <div class="col-md-6">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="employ" id="employ1" value="option1">
+                  <input class="form-check-input" type="radio" name="employ" id="employ1" value="option1" required>
                   <label class="form-check-label" for="employ1">
                     Yes
                   </label>
@@ -271,9 +274,14 @@
           </fieldset>
 
           <!-- Button -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" onmouseover="myPorfolio()">Submit</button>
         </form>
       </div>
+    </section>
+
+    <!-- Result Section -->
+    <section>
+      <div id="piechart"></div>
     </section>
 
     <!-- Contact Section-->
@@ -333,6 +341,147 @@
   <div class="snackbars" id="form-output-global"></div>
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+    var score = "";
+    google.charts.load('current', { 'packages': ['corechart'] });
+    function myPorfolio() {
+      var risk1 = document.getElementById('risk1');
+      var risk2 = document.getElementById('risk2');
+      var risk3 = document.getElementById('risk3');
+      var industry1 = document.getElementById('industry1');
+      var industry2 = document.getElementById('industry2');
+      var industry3 = document.getElementById('industry3');
+
+      if (risk1.checked == true && industry1.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Information Technology Index Fund', 69],
+            ['Vanguard Total Stock Market Index Fund', 21],
+            ['Vanguard FTSE All-World UCITS ETF', 10]
+          ]);
+          var options = { 'title': 'Greenstone High Risk Tech Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk1.checked == true && industry2.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Information Technology Index Fund', 21],
+            ['Vanguard Total Stock Market Index Fund', 69],
+            ['Vanguard FTSE All-World UCITS ETF', 10]
+          ]);
+          var options = { 'title': 'Greenstone Medium Risk Tech Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk1.checked == true && industry3.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Information Technology Index Fund', 10],
+            ['Vanguard Total Stock Market Index Fund', 21],
+            ['Vanguard FTSE All-World UCITS ETF', 69]
+          ]);
+          var options = { 'title': 'Greenstone Low Risk Tech Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk2.checked == true && industry1.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['SPDR S&P Regional Banking ETF', 69],
+            ['iShares U.S. Broker-Dealers & Securities Exchange ETF', 21],
+            ['JPMorgan Ultra-Short Income ETF', 10]
+          ]);
+          var options = { 'title': 'Greenstone High Risk Financial Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk2.checked == true && industry2.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['SPDR S&P Regional Banking ETF', 21],
+            ['iShares U.S. Broker-Dealers & Securities Exchange ETF', 69],
+            ['JPMorgan Ultra-Short Income ETF', 10]
+          ]);
+          var options = { 'title': 'Greenstone Medium Risk Financial Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk2.checked == true && industry3.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['SPDR S&P Regional Banking ETF', 10],
+            ['iShares U.S. Broker-Dealers & Securities Exchange ETF', 21],
+            ['JPMorgan Ultra-Short Income ETF', 69]
+          ]);
+          var options = { 'title': 'Greenstone Low Risk Financial Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk3.checked == true && industry1.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Customer Staples Fund', 69],
+            ['Vanguard Intermediate-Term Corporate Index Fund', 21],
+            ['Vanguard Total Bind Market Index Fund', 10]
+          ]);
+          var options = { 'title': 'Greenstone High Risk Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk3.checked == true && industry2.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Customer Staples Fund', 21],
+            ['Vanguard Intermediate-Term Corporate Index Fund', 69],
+            ['Vanguard Total Bind Market Index Fund', 10]
+          ]);
+          var options = { 'title': 'Greenstone Medium Risk Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+      else if (risk3.checked == true && industry3.checked == true) {
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Portfolio', 'Investment value'],
+            ['Vanguard Customer Staples Fund', 10],
+            ['Vanguard Intermediate-Term Corporate Index Fund', 21],
+            ['Vanguard Total Bind Market Index Fund', 69]
+          ]);
+          var options = { 'title': 'Greenstone Low Risk Portfolio', is3D: true, 'width': 800, 'height': 400 };
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
